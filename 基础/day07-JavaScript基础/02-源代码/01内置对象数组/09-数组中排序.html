@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    //排序： 从小到大   从大到小
+    //以前：自己写算法，如冒泡排序
+
+    //数组名.sort();
+    /*
+    var arr = [2,1,3,6,7,4,5,11];
+    arr.sort();  //排序
+    console.log(arr);
+    */
+
+    var arr = [2,1,3,6,7,4,5,11];
+
+    /*
+    //比较的函数
+    var fn = function(a,b){
+      //return a-b;   从小到大
+      return b-a;  //从大到小
+    };
+    arr.sort(fn);
+    console.log(arr);
+    */
+
+    /*
+    arr.sort(function(a,b){
+      return a -b; //小到大
+    });
+    */
+
+
+    arr.sort(function(a,b){  //a 和 b是数组中相邻的两个元素
+      return b -a; //大到小
+    });
+
+    console.log(arr);
+
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

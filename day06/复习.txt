@@ -1,0 +1,29 @@
+三大系列
+	offset
+		① offsetWidth/offsetHeight    内容 + padding + border
+		② offsetLeft/offsetTop        位置参照谁？ 定位→上级最近的定位元素   没有→body
+		③ offsetParent                获取父元素参照？     定位→上级最近的定位元素   定位→上级最近的定位元素
+
+	client系列
+		① clientWidth/clientHeight    内容 + padding
+		② clientLeft/clientTop        位置：pandding的外边界和border的外边界的间距
+	scroll
+		① scrollWidth/scrollHeight   内容+padding + 溢出部分
+		② scrollTop/scrollLeft      被卷去的像素
+
+补充事件：
+	onscroll
+	特殊：给window绑定
+	获取被卷去的像素：  document.docuemntElement.scrollTop||document.body.scrollTop
+
+事件绑定（事件监听）
+	标准 事件源.addEventLisenter(事件类型,事件处理程序，是否捕获) /事件源.removeEventLisenter(事件类型,事件处理程序名)
+	IE   事件源.attachEvent(on+事件类型,事件处理程序) /事件源.detachEvent(事件类型,事件处理程序名)
+	兼容：判断某个是否为undefined
+
+
+实现某个效果时的思路：
+	① 需求：做哪些功能（分功能模块）
+	② 根据不同的功能模块给出解决思路
+	③ 用技术实现思路
+	

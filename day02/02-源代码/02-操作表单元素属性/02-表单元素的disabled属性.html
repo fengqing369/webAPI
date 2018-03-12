@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    button {
+      cursor: not-allowed;
+      /*not-allowed 控制光标显示禁止图标*/
+    }
+  </style>
+</head>
+<body>
+  <button id="btn" >按钮</button>
+  <script>
+    var btn = document.getElementById('btn');
+    console.dir(btn);
+    //通过js控制disabled true表示禁用   false表示不禁用
+    btn.disabled = true;
+    btn.disabled = false;
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .grandFather{
+      width: 600px;
+      height: 500px;
+      background-color: green;
+      border:1px solid red;
+      margin:100px;
+      position: relative;
+    }
+    .father {
+      width: 300px;
+      height: 300px;
+      background-color: gold;
+      margin:100px;
+      border:1px solid gold;
+      position: relative;
+    }
+
+    .son {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin: 50px;
+      position: absolute;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="grandFather">
+    <div class="father">
+      <div id="son" class="son"></div>
+    </div>
+  </div>
+  <script>
+    var son = document.getElementById('son');//元素
+    console.log(son.offsetTop);
+    console.log(son.offsetLeft);
+    /*
+      若获取一个元素的位置时，元素位置参考谁？
+        ① 元素没有定位，并且上级元素也没有定位。此时坐标参考body
+        ② 元素有定位，并且上级元素也有定位。此时位置参考最近的带有定位的上级元素。
+    */
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    //练习题7：把字符串 '你真棒,棒棒哒' 中的所有‘棒’字符，改为 ‘牛’
+
+    //替换
+    var str = '你真棒,棒棒哒';
+    //字符串.replace(old,new)； 返回一个新的字符串
+    var newStr = str.replace('棒','牛');
+    // console.log(newStr);
+
+
+    //str.indexOf('字符');
+    var str2 = 'abc';
+    //var index  = str2.indexOf('b');
+    //var index  = str2.indexOf('d');
+    //console.log(index);
+
+
+    var str3 = '你真棒,棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒,棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒棒哒';
+    /*
+    str3 = str3.replace('棒','牛'); //你真牛,棒棒哒
+    str3 = str3.replace('棒','牛');//你真牛,牛棒哒
+    str3 = str3.replace('棒','牛');//你真牛,牛棒哒
+    */
+
+
+    //思路：循环去找【棒】字，直到找不到为止，
+    while(true){
+      var index = str3.indexOf('棒'); //通过indexOf方法去找，若找不到返回-1
+      if(index==-1){ //找不到 【棒】字
+        //结束循环
+        break;
+      }else { //还有 【棒】字
+        str3 = str3.replace('棒','牛')
+      }
+    }
+    console.log(str3);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

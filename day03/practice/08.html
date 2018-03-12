@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select {
+            width: 150px;
+            background-color: #0099cc;
+        }
+    </style>
+</head>
+<body>
+<!--左边的下拉菜单-->
+<select id="all" size="10" multiple="multiple">
+    <option>苹果</option>
+    <option>香蕉</option>
+    <option>西瓜</option>
+    <option>牛油果</option>
+    <option>西红柿</option>
+</select>
+
+<!--四个选择按钮位置-->
+<input type="button" value=">>" id="allRight">
+<input type="button" value="<<" id="allLeft">
+<input type="button" value=">" id="right">
+<input type="button" value="<" id="left">
+
+<!--右边的下拉菜单-->
+<select id="select" size="10" multiple="multiple">
+</select>
+
+<script>
+  var all = document.getElementById('all');
+  var select = document.getElementById('select');
+  var alls = all.children;
+  var selects = select.children;
+
+  var allRight = document.getElementById('allRight');
+  var allLeft = document.getElementById('allLeft');
+  var right = document.getElementById('right');
+  var left = document.getElementById('left');
+
+    
+      right.onclick = function(){
+        for(var i = 0;i<alls.length;i++){
+          if(alls[i].selected){
+            select.appendChild(alls[i]);
+            i--;
+          }
+        }
+      }
+      left.onclick = function(){
+        for(var i = 0;i<selects.length;i++){
+          if(selects[i].selected){
+            all.appendChild(selects[i]);
+            i--;
+          }
+        }
+      }
+
+      allRight.onclick = function(){
+        for(var i = 0;i<alls.length;){
+          select.appendChild(alls[i]);
+        }
+      }
+      allLeft.onclick = function(){
+        for(var i = 0;i<selects.length;){
+           all.appendChild(selects[i]);
+        }
+      }
+    
+    
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <ul id="ul">
+    <li>我是孩子1</li>
+    <li id="boy2">我是孩子2</li>
+    <li>我是孩子3</li>
+    <li>我是孩子4</li>
+    <li>我是孩子5</li>
+  </ul>
+  <script>
+    var boy2 = document.getElementById('boy2'); //第二孩子
+    //节点对象.previousSibling; 找上一个兄弟 (可能会找到文本)
+    //var boy1 = boy2.previousSibling;
+    //节点对象.previousElementSibling; 找上一个兄弟（一定元素标签）
+    //var boy1 = boy2.previousElementSibling;
+    //var boy1 = boy2.previousSibling;
+    //console.dir(boy1);
+
+    //var ul = document.getElementById('ul');
+    //console.log(ul.children[0]);
+
+    /*
+    console.log(boy2.nextSibling);
+    console.log(boy2.nextElementSibling);
+    */
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<button id="btn">按钮</button>
+
+<script>
+
+  var btn = document.getElementById('btn');
+  //IE方式
+  var handler1 = function(){
+    alert(1);
+  };
+  btn.attachEvent('onclick',handler1);
+  var handler2 = function(){
+    alert(2);
+  };
+  btn.attachEvent('onclick',handler2);
+
+  /*
+   事件目标.detachEvent(事件类型,事件处理程序的名称);
+     事件目标：要绑定的那个节点对象。
+     事件类型：交互行为，在这里要加on
+     事件处理程序的名称：函数名称
+  */
+  btn.detachEvent('onclick',handler1);
+</script>
+</body>
+</html>

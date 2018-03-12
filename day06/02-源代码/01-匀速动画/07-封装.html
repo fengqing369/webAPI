@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: gold;
+      position: absolute;
+    }
+
+    #box2 {
+      top:300px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">按钮1控制金色的盒子</button>
+<button id="btn2">按钮2控制蓝色的盒子</button>
+<div id="box"></div>
+<div id="box2"></div>
+<script src="animate.js"></script>
+<script>
+  //得到操作的元素
+  var btn = document.getElementById('btn');
+  var btn2 = document.getElementById('btn2');
+  var box = document.getElementById('box');
+  var box2 = document.getElementById('box2');
+  //给按钮绑定事件
+  var num;//定时器的标识
+  btn.onclick = function(){
+    animate(box,800); //产生一个定时器针对box   num
+  };
+
+
+  var num2;
+  btn2.onclick = function(){
+    animate(box2,1000); //产生一个定时器box2  num
+  };
+
+  //问题：当多个盒子运动时，后面的盒子的运动开始时，前面的盒子运动会停止。
+  //原因：之前的盒子的定时器停止
+  //解决：保证每一个运动的物体都有属于自己的定时器标识
+</script>
+</body>
+</html>

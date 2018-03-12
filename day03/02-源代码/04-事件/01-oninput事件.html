@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <input id="txt" type="text"/>
+  <script>
+    var txt = document.getElementById('txt');
+    //oninput
+    txt.oninput = function(){
+      console.log(this.value.length);
+    };
+  </script>
+</body>
+</html>

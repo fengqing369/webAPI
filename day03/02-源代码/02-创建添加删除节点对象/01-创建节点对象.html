@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<button id="btn">添加</button>
+<p>我是p标签</p>
+<p>我是p标签</p>
+<p>我是p标签</p>
+<p>我是p标签</p>
+<p>我是p标签</p>
+<p>我是p标签</p>
+<script>
+  var btn = document.getElementById('btn');
+  btn.onclick = function(){
+    document.write('<h2>我是新来的</h2>');
+    //缺点：覆盖页面上所有的元素
+  };
+</script>
+</body>
+</html>

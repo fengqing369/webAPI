@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding:0;
+    }
+    ul {
+      list-style: none;
+    }
+    i{
+      font-style: normal;
+    }
+    .box {
+      width: 600px;
+      border:1px solid #ccc;
+      margin:0 auto;
+      padding:20px;
+      text-align: center;
+    }
+    textarea {
+      resize: none;
+      width: 500px;
+      height: 150px;
+      font-size: 16px;
+    }
+    .control {
+      text-align: right;
+      padding-right: 50px;
+    }
+
+    .control i {
+      display: inline-block;
+      padding: 0 5px;
+    }
+    .control i.current {
+      color:red;
+    }
+    .control i.total {
+      color:#ccc;
+    }
+    .control button {
+      width: 100px;
+      height: 30px;
+    }
+    #commentList {
+      text-align: left;
+      width: 500px;
+      margin:0 auto;
+    }
+
+    #commentList li {
+      border-bottom: 1px dotted #ccc;
+      padding: 10px 0;
+      background-color: beige;
+
+    }
+    #commentList li div.del {
+      text-align: right;
+    }
+    #commentList li div.del span {
+      color:blue;
+      text-decoration:underline;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="box">
+    <textarea id="txt" placeholder="说点什么吧..." maxlength="300"></textarea>
+    <div class="control">
+      <span>
+        <i id="current" class="current">0</i>/<i class="total" id="total">200</i>
+      </span>
+      <button id="add">发表</button>
+    </div>
+    <ul id="commentList">
+
+      <li>
+       <div>哈哈哈哈哈哈哈哈哈哈哈</div>
+       <div class="del">
+         <span>删除</span>
+       </div>
+      </li>
+
+
+    </ul>
+  </div>
+  <script>
+    //① 获取操作的节点对象  文本域 和 两个i标签对应的节点对象
+    var txt = document.getElementById('txt');
+    var current = document.getElementById('current');
+    var total = document.getElementById('total');
+    //② 给文本域绑定oninput事件
+    txt.oninput = function(){
+      //③ 检测文本域中的内容的长度，并计算  当前的文字的个数  和 剩余的个数
+      var len = this.value.length; //内容的长度
+      current.innerText = len; //显示当前内容的长度
+      var len2 = 300-len; //剩余的长度
+      total.innerText = len2;//显示剩余的长度
+
+    };
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script>
+  /*
+   语法：事件源.addEventListener(事件类型,事件处理程序,是否捕获);
+   事件目标：要绑定的那个节点对象。
+   事件类型：交互行为，在这里不加on
+   事件处理程序：函数
+   是否捕获:可选，布尔值，true是捕获，false是冒泡，默认为false;
+  */
+  var btn = document.getElementById('btn');
+  //标准方式
+  /*
+
+  var handler1 = function(){
+    alert(1);
+  };
+  btn.addEventListener('click',handler1);
+  var handler2 = function(){
+    alert(2);
+  };
+  btn.addEventListener('click',handler2);
+  */
+
+
+  //IE方式
+  /*
+    事件源.attachEvent(事件类型,事件处理程序);
+    事件目标：要绑定的那个节点对象。
+    事件类型：交互行为，在这里要加on
+    事件处理程序：函数
+  */
+  var handler1 = function(){
+    alert(1);
+  };
+  btn.attachEvent('onclick',handler1);
+  var handler2 = function(){
+    alert(2);
+  };
+  btn.attachEvent('onclick',handler2);
+</script>
+</body>
+</html>

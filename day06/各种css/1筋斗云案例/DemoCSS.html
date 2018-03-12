@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+    
+    ul {
+      list-style: none
+    }
+    
+    body {
+      background-color: #333;
+    }
+    
+    .nav {
+      width: 800px;
+      height: 42px;
+      margin: 100px auto;
+      background: url(images/rss.png) right center no-repeat;
+      background-color: #fff;
+      border-radius: 10px;
+      position: relative;
+    }
+    
+    .nav li {
+      width: 83px;
+      height: 42px;
+      text-align: center;
+      line-height: 42px;
+      float: left;
+      cursor: pointer;
+    }
+    
+    .nav span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 83px;
+      height: 42px;
+      background: url(images/cloud.gif) no-repeat;
+    }
+    
+    ul {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+<div class="nav">
+  <span id="cloud"></span>
+  <ul id="navBar">
+    <li>北京校区</li>
+    <li>上海校区</li>
+    <li>广州校区</li>
+    <li>深圳校区</li>
+    <li>武汉校区</li>
+    <li>关于我们</li>
+    <li>联系我们</li>
+    <li>招贤纳士</li>
+  </ul>
+</div>
+<script>
+  //1 获取元素
+  var cloud = document.getElementById("cloud");
+  var navBar = document.getElementById("navBar");
+  var lis = navBar.children;//要操作的所有li
+  var pos = 0;
+  
+  for (var i = 0; i < lis.length; i++) {
+    //2 鼠标移入操作
+    lis[i].onmouseover = function () {
+      //让cloud运动到当前li上
+      animate(cloud, this.offsetLeft);
+    };
+    //3 鼠标移出操作
+    lis[i].onmouseout = function () {
+      animate(cloud, pos);
+    };
+    //4 鼠标点击操作
+    lis[i].onclick = function () {
+      //让移出后可以回到的位置更改为当前位置
+      pos = this.offsetLeft;
+    };
+  }
+  
+  
+  function animate(element, target) {
+    clearInterval(element.timer);
+    element.timer = setInterval(function () {
+      //1 获取元素当前位置
+      var current = element.offsetLeft;
+      //2 设置变速运动公式
+      var step = (target - current) / 10;
+      //对步长进行取整操作,正数向上取整，负数向下取整
+      step = step > 0 ? Math.ceil(step) : Math.floor(step);
+      
+      current = current + step;
+      //3 设置给left属性
+      element.style.left = current + "px";
+      //4 到达指定位置清除定时器即可
+      if (current == target) {
+        clearInterval(element.timer);
+      }
+    }, 20);
+  }
+</script>
+</body>
+</html>

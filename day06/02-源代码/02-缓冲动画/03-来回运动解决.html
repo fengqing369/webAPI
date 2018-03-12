@@ -1,0 +1,46 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: absolute;
+    }
+    #box2 {
+      margin-top: 200px;
+    }
+  </style>
+</head>
+<body>
+<button id="btn1">运动400</button>
+<button id="btn2">运动1000</button>
+<div id="box1"></div>
+<script src="animate5.0.js"></script>
+<script>
+  //获取操作的节点对象
+  var btn1 = document.getElementById('btn1'); //400
+  var btn2 = document.getElementById('btn2'); //1000
+  var box1 = document.getElementById('box1');
+
+  //绑定事件
+  btn1.onclick = function(){
+    animate(box1,313);
+  };
+
+  btn2.onclick = function(){
+    animate(box1,613);
+  };
+
+
+</script>
+</body>
+</html>

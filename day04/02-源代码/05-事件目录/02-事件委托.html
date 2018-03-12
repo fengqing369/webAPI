@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    li {
+      background-color: green;
+      margin-top:10px;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">添加</button>
+  <ul id="ul">
+    <li>我是ul的儿子li1</li>
+    <li>我是ul的儿子li2</li>
+    <li>我是ul的儿子li3</li>
+    <li>我是ul的儿子li4</li>
+    <li>我是ul的儿子li5</li>
+    <li>我是ul的儿子li6</li>
+    <li>我是ul的儿子li7</li>
+    <li>我是ul的儿子li8</li>
+    <li>我是ul的儿子li9</li>
+    <li>我是ul的儿子li10</li>
+
+  </ul>
+  <script>
+
+    var btn = document.getElementById('btn');
+    var ul =  document.getElementById('ul');
+    btn.onclick = function(){
+      var newLi = document.createElement('li');
+      newLi.innerHTML = '我是新来的' + Math.random();
+      ul.appendChild(newLi);
+    };
+
+    //给所有的li绑定事件，委托给ul
+    ul.onclick = function(e){
+      //alert(this.innerHTML);
+      //target
+      var _e = window.event||e;
+      var _t = _e.target||_e.srcElement;
+      //console.dir(_t);
+      if(_t.tagName=='LI'){
+        alert(_t.innerHTML);
+      }
+    };
+  </script>
+</body>
+</html>

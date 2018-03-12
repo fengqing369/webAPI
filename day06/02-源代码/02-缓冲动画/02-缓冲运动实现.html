@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: gold;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div id="box"></div>
+<script src="animate5.0.js"></script>
+<script>
+  //得到操作的元素
+  var btn = document.getElementById('btn');
+  var box = document.getElementById('box');
+  //给按钮绑定事件
+  btn.onclick = function(){
+    animate(box,113);
+  };
+</script>
+</body>
+</html>

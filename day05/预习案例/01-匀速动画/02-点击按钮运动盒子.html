@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">运动</button>
+  <div id="box"></div>
+  <script>
+    //需求：点击按钮实现盒子向右不断的运动
+    //思路1：获取按钮 和 div节点对象
+    var btn = document.getElementById('btn');//按钮
+    var box = document.getElementById('box');//盒子
+    //思路2：给按钮绑定点击事件
+    btn.onclick = function(){
+      //思路3：点击按钮时，不断的更改盒子的left值
+      //设定步长（每间隔多长时间更改多少）
+      var step = 10;
+      //产生一个定时器
+      setInterval(function(){
+        //先获取盒子原有的left值
+        var v = box.offsetLeft;
+        //更改盒子的left值
+        box.style.left =v + step + 'px';
+      },20);
+    };
+
+
+    //缺点：盒子不断的运动，无法停止。
+    //解决方案：设定运动的目标，到达目标后停止定时器
+
+  </script>
+</body>
+</html>

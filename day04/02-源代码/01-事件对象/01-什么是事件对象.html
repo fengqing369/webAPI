@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  /*
+    事件对象？
+      和事件的产生有关系，当一个事件触发时，可以在这个事件中通过事件对象获取和当前事件相关的一些信息[比如 ：鼠标的坐标、键盘检测....]。
+      鼠标
+      键盘
+  */
+
+  //需求：当鼠标在文档上任何地方  点击时   ，获取鼠标的位置.
+  //怎么获取？
+      //通过事件对象
+      //语法：
+      /*
+        事件源.事件类型 = function(e){
+            //形参e就代表和当前事件有关的【事件对象】
+
+        }
+      */
+  //产生一个事件
+  document.onclick = function(e){
+    //console.log(e);
+    console.log('X:' + e.clientX + '---Y:' + e.clientY);
+  };
+
+  document.onmousemove = function(e) {
+    //console.log(e);
+    console.log('X:' + e.clientX + '---Y:' + e.clientY);
+  }
+</script>
+</body>
+</html>

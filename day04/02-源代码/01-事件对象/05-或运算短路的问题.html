@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  // 或运算： 两边有一个是true，最终结果就是true
+  var r1 = 0||1;    //false||true;  因为在此仅仅验证左边的不能确定最终的结果。走到哪个位置就把哪个位置的值取出来赋值给变量
+  console.log(r1);
+
+  var r2 = 1||0;   //true||false 因为在此，仅仅验证左边的就已经确定了最终的结果。所以没有执行或运算后面的。
+  console.log(r2);
+
+
+  var r3 = undefined||10;
+  console.log(r3);
+
+  var r4 = ''||{name:'李四'}
+  console.log(r4);
+
+  var r5 = '我爱你'||{name:'李四'}
+  console.log(r5);
+</script>
+</body>
+</html>

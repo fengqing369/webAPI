@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding:0;
+    }
+    ul {
+      list-style: none;
+    }
+    i{
+      font-style: normal;
+    }
+    .box {
+      width: 600px;
+      border:1px solid #ccc;
+      margin:0 auto;
+      padding:20px;
+      text-align: center;
+    }
+    textarea {
+      resize: none;
+      width: 500px;
+      height: 150px;
+      font-size: 16px;
+    }
+    .control {
+      text-align: right;
+      padding-right: 50px;
+    }
+
+    .control i {
+      display: inline-block;
+      padding: 0 5px;
+    }
+    .control i.current {
+      color:red;
+    }
+    .control i.total {
+      color:#ccc;
+    }
+    .control button {
+      width: 100px;
+      height: 30px;
+    }
+    #commentList {
+      text-align: left;
+      width: 500px;
+      margin:0 auto;
+    }
+
+    #commentList li {
+      border-bottom: 1px dotted #ccc;
+      padding: 10px 0;
+      background-color: beige;
+
+    }
+    #commentList li div.del {
+      text-align: right;
+    }
+    #commentList li div.del span {
+      color:blue;
+      text-decoration:underline;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="box">
+    <textarea id="txt" placeholder="说点什么吧..." maxlength="300"></textarea>
+    <div class="control">
+      <span>
+        <i id="current" class="current">0</i>/<i class="total" id="total">200</i>
+      </span>
+      <button id="add">发表</button>
+    </div>
+    <ul id="commentList">
+
+    </ul>
+  </div>
+
+  <script>
+    //获取元素
+    var txt = document.getElementById('txt');
+    var current = document.getElementById('current');
+    var total = document.getElementById('total');
+    var add = document.getElementById('add');
+    var commentList = document.getElementById('commentList');
+    //设置数字事件
+    txt.oninput = function(){
+        //当前输入的文字数量
+        current.innerText = txt.value.length;
+        //剩余的文字数量
+        if(current.innerText<200){
+          total.innerText = 200 - current.innerText;
+        }else{
+          txt.readOnly = true;
+          total.innerText = 0;
+        }
+    }
+
+    //添加发表事件
+    add.onclick = function(){
+      if(txt.value == ""){
+          alert("请输入内容");
+      }else{
+        //创建新的li
+      var newLi = document.createElement('li');
+      //创建一个div1,放文字
+      var newDiv1 = document.createElement('div');
+      newDiv1.innerText = txt.value;
+      newLi.appendChild(newDiv1);
+      //创建一个div2，放span标签
+      var newDiv2 = document.createElement('div');
+      newDiv2.className = "del";
+      //给span标签添加事件
+      var span = document.createElement('span');
+      span.innerText = "删除";
+      span.onclick = function(){
+        commentList.removeChild(span.parentNode.parentNode);
+      }
+      newDiv2.appendChild(span);
+      newLi.appendChild(newDiv2);
+      // commentList.appendChild(newLi);
+      commentList.insertBefore(newLi,commentList.children[0]);
+
+      //清空文本框内容
+      txt.value = "";
+      //还原current文字个数，和total剩余个数
+      current.innerText = 0;
+      total.innerText = 200 - current.innerText;
+      }
+    }
+  </script>
+  
+</body>
+</html>

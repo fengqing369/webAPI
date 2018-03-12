@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: absolute;
+    }
+    #box2 {
+      margin-top: 200px;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">运动</button>
+<div id="box"></div>
+<div id="box2"></div>
+<script>
+  //需求：点击按钮实现盒子向右不断的运动
+  //思路1：获取按钮 和 div节点对象
+  var btn = document.getElementById('btn');//按钮1
+  var box = document.getElementById('box');//盒子1
+  var box2 = document.getElementById('box2');//盒子2
+  //思路2：给按钮绑定点击事件
+  btn.onclick = function(){
+    //思路3：点击按钮时，不断的更改盒子的left值
+    animate(box,400);
+    animate(box2,400);
+
+  };
+
+  /*
+   功能：动画
+   参数：
+   node  运动哪个元素节点
+   targetValue  目标值
+   */
+  function animate(node,targetValue){
+    //产生新的定时器前先把原有的定时器清除，包证只有一个定时器。
+    if(node.num!=undefined){
+      clearInterval(node.num);
+    }
+    //设定步长（每间隔多长时间更改多少）
+    var step = 10;
+    //设定运动的目标值
+    //产生一个定时器,并接收定时器的标识给每个运动物体对象的num属性
+    node.num = setInterval(function(){
+      //先获取盒子原有的left值
+      var v = node.offsetLeft;
+      //判断是否已经到达目标，若到达则停止定时器并且结束后面代码的执行
+      if(v==targetValue){
+        clearInterval(node.num); //停止定时器
+        return; //结束后面代码的执行
+      }
+      //更改盒子的left值
+      node.style.left =v + step + 'px';
+    },20);
+  }
+
+
+
+
+</script>
+</body>
+</html>

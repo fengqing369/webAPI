@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    .grandFather{
+      width: 600px;
+      height: 500px;
+      background-color: green;
+      border:1px solid red;
+      margin:100px;
+
+    }
+    .father {
+      width: 300px;
+      height: 300px;
+      background-color: gold;
+      margin:100px;
+      border:1px solid gold;
+
+    }
+
+    .son {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      margin: 50px;
+      position: absolute;
+
+    }
+  </style>
+</head>
+<body>
+<div class="grandFather">
+  <div class="father">
+    <div id="son" class="son"></div>
+  </div>
+</div>
+<script>
+  var son = document.getElementById('son');//元素
+  console.log(son.offsetParent);
+  console.log(son.parentNode);
+  /*
+    元素.offsetParent
+      获取的是最近的带有定位的上级元素，若上级元素没有定位。则获取body。
+
+    元素.parentNode
+      不论上级元素是否有定位，获取永远是最近上级元素。
+  */
+
+
+</script>
+</body>
+</html>

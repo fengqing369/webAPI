@@ -1,0 +1,22 @@
+关于调试：
+	问题：在什么操作下出现
+	调试：调试操作那一块出现问题的代码
+
+
+关于思路：
+	思路：需求（干什么，实现多少功能） + 技术
+
+创建节点对象：
+	节点对象.innerHTML = '<h2></h2>';
+	document.createElement('标签名');
+
+删除节点对象：
+	父节点.removeChild(子节点); 用的多
+	子节点.remove(); 
+
+根据关系找节点对象：
+	根据子找父：  子节点.parentNode;
+	根据父找一堆子： 
+		父.childNodes;   返回一个伪数组  父.childNodes[位置]  
+		父.children;     返回一个伪数组  父.children[位置]  
+

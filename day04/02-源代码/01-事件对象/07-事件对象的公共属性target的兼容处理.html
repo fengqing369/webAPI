@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    li {
+      background-color: red;
+      margin-top: 10px;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+<ul id="ul">
+  <li>我是li2</li>
+  <li>、
+    <div>我是li1中div</div>
+  </li>
+</ul>
+<!-- <script>
+  var ul = document.getElementById('ul');
+  ul.onclick = function(e){
+    //this代表的是ul
+    //console.log(this.innerHTML);
+
+    var _event = window.event||e; //事件对象
+    //标准方式：事件对象.target
+    //IE方式： 事件对象.srcElement;
+    //console.log(_event.srcElement.innerHTML);
+
+    var _target = _event.srcElement||_event.target;
+    console.log(_target.innerHTML);
+
+
+
+
+  };
+</script> -->
+<script>
+  // var ul = document.getElementById('ul');
+  // 
+    // console.log(_target.innerHTML);
+    
+      ul.onclick = function(e){
+        var _event = window.event||e; 
+        var _target = _event.srcElement||_event.target;
+        var timer = setInterval(function(e){
+          console.log(_target);
+        },1000);
+      }
+
+
+
+
+
+  // };
+</script>
+
+</body>
+</html>

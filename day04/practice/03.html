@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: black;
+    }
+
+    img {
+      width: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    img.active {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+    <img src="xiaoniao.png" id="photo" class="active">
+    
+    <!-- 自己的js-->
+    <script>
+      //获取元素
+      var img = document.getElementById('photo');
+      //设置鼠标移动事件
+      window.onmousemove = function(e){
+        //获取事件对象
+        var e = e || window.event;
+        var x  = e.clientX;
+        var y  = e.clientY;
+        //获取img的相对浏览器的坐标值
+        img.style.left = x + "px";
+        img.style.top = y + "px";
+      }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">复制</button>
+  <div>
+    <h2>我是标题</h2>
+    <p>我是p标签</p>
+    <ul id="ul">
+      <li>我是li1</li>
+      <li>我是li2</li>
+    </ul>
+  </div>
+  <!-- <script>
+    var btn = document.getElementById('btn');
+    var div = document.getElementsByTagName('div')[0];
+    //克隆节点
+    // btn.onclick = function(){
+    //   var copyDiv = div.cloneNode(true);
+    //   document.body.appendChild(copyDiv);
+    // }
+    //替换节点
+    var ul = document.getElementById('ul');
+    btn.onclick = function(){
+      var newLi = document.createElement('li');
+      newLi.innerHTML  = '<h1>我是新来的老大</h1>';
+      // ul.appendChild(newLi);
+      ul.replaceChild(newLi,ul.children[0]);
+    }
+  </script> -->
+  <script>
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+    // btn.onclick = function(){
+    //   var newLi = document.createElement('li');
+    //   newLi.innerHTML  = '<h1>我是新来的老大</h1>';
+    //   ul.replaceChild(newLi,ul.children[0]);
+    // }
+    // btn.onclick = function(){
+    //   var newLi = document.createElement('li');
+    //   newLi.innerHTML = '<h1>我是新来的</h1>';
+    //   ul.appendChild(newLi);
+    //   newLi.cloneNode(true);
+    // }
+  </script>
+
+</body>
+</html>

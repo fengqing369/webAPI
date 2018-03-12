@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+    <script src="common.js"></script>
+    <script>  
+      var btn = document.getElementById('btn');
+      function fn1(){
+        alert(1);
+      }
+      function fn2(){
+        alert(2);
+      }
+
+      //兼容处理 绑定事件监听
+      myaddEvent(btn,"click",fn1);
+      myaddEvent(btn,"click",fn2);
+
+      //兼容处理 解绑事件监听
+      // mymoveEvent(btn,"click",fn1);
+      // mymoveEvent(btn,"click",fn2);
+    </script>
+  
+  </body>
+</html>

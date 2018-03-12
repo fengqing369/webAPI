@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<p>
+  <button id="big">放大</button>
+  <button id="small">缩小</button>
+</p>
+<img src="wc.gif" alt="" id="image"/>
+<script src="common.js"></script>
+<script>
+  //① 获取两个按钮 和 一个图片节点对象
+  var big = document.getElementById('big');
+  var small = document.getElementById('small');
+  var image = document.getElementById('image');
+  //② 放大：给放大按钮注册点击事件，获取图片原有的宽度。在原有的基础之上增50
+  big.onclick = function(){
+    //获取
+    var v = parseInt(myGetStyle(image,'width'));
+    //console.log(v);
+    v = v + 50;
+    //设置样式值
+    image.style.width = v + 'px';
+  };
+  //③ 缩小：：给缩小按钮注册点击事件，获取图片原有的宽度。在原有的基础之上减50
+  small.onclick = function(){
+    //获取
+    var v = parseInt(myGetStyle(image,'width'));
+    //console.log(v);
+    v = v - 50;
+    if(v<200){
+      v = 200;
+    }
+    //设置样式值
+    image.style.width = v + 'px';
+  };
+</script>
+</body>
+</html>

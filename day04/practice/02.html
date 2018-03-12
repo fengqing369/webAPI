@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: black;
+    }
+
+    img {
+      width: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    img.active {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+    <img src="xiaoniao.png" id="photo" class="active">
+    <!-- 第三方js库-->
+    <script src="common.js"></script>
+    <!-- 自己的js-->
+    <script>
+      //获取元素
+      var img = document.getElementById('photo');
+      //设置键盘事件
+      document.onkeydown = function(e){
+        //获取事件对象
+        var e = e || window.event;
+        //设置按键值
+        var code = e.keyCode;
+        // console.log(code);
+        //设置switch
+        switch(code){
+          case 38:  //↑
+              // console.log('你上键了');
+              //设置图片属性值
+              var v = parseInt(myGetStyle(img,'top'));
+              img.style.top = v - 10 + "px";
+            break;
+          case 39://→
+              // console.log('你右键了');
+              //添加类名
+              img.className = "";
+              //设置图片属性值
+              var v = parseInt(myGetStyle(img,'left'));
+              img.style.left = v + 10 + "px";
+            break;
+          case 40: //↓
+            // console.log('你下键了');
+            //设置图片属性值
+            var v = parseInt(myGetStyle(img,'top'));
+            img.style.top = v + 10 + "px";
+            break;
+          case 37://←
+            // console.log('你左键了');
+            //添加类名
+            img.className = "active";
+            //设置图片属性值
+            var v = parseInt(myGetStyle(img,'left'));
+            img.style.left = v - 10 + "px";
+            break;
+        }
+      }
+
+    </script>
+</body>
+</html>

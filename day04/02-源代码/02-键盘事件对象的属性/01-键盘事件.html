@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  //onkeydown  onkeyup
+  document.onkeydown = function(e){
+    //console.log('键盘按下了');
+    var _event = window.event||e;
+    //console.log(_event.altKey);
+    //console.log(_event.shiftKey);
+    console.log(_event.ctrlKey);
+
+    if(_event.ctrlKey==true){
+      console.log('发送消息');
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <button id="btn">添加</button>
+  <ul id="ul">
+    <li>
+      <div>
+        <h2>我是li1</h2>
+      </div>
+    </li>
+    <li>
+      <div>
+        <h2>我是li2</h2>
+      </div>
+    </li>
+  </ul>
+  <script>
+    //① 获取要操作的节点对象 按钮 和 ul
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+    //② 给按钮绑定点击事件
+    btn.onclick = function(){
+      //③ 创建一个li
+      var newLi = document.createElement('li');
+      //④ 创建一个新的div节点对象，并且追加新的li里
+      var newDiv = document.createElement('div');
+      //⑤ 创建一个新的h2节点对象，并且追加到新的div里
+      var newH2 = document.createElement('h2');
+      newH2.innerText = '我是新来的';
+
+      //把h2放到div中
+      newDiv.appendChild(newH2);
+      //把div放到li中
+      newLi.appendChild(newDiv);
+      //追加到ul中
+      ul.appendChild(newLi);
+    };
+
+    //缺点：若创建的元素中嵌套的元素较多时，代码操作复杂。
+    //解决方案：让document.createElement('标签'); 和 innerHTML结合使用
+  </script>
+</body>
+</html>

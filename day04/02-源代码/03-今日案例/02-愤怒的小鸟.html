@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: black;
+    }
+
+    img {
+      width: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    img.active {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+    <img src="xiaoniao.png" id="photo" class="active">
+    <!-- 第三方js库-->
+    <script src="common.js"></script>
+    <!-- 自己的js-->
+    <script>
+      //① 获取要操作的节点对象 img节点
+      var img = document.getElementById('photo');
+      //② 给document绑定键盘事件 onkeydown
+      document.onkeydown = function(e){
+        //③ 在事件中检测用户按下了那个键（通过事件对象里的keyCode的值检测），根据方向键控制小鸟移动的方向。
+        var _event = window.event||e;  //兼容处理好的事件对象
+        var code = _event.keyCode;
+        switch(code){
+          case 38:  //↑
+              //console.log('你上键了');
+              var v = parseInt(myGetStyle(img,'top'));
+              img.style.top = v - 10 + 'px';
+            break;
+          case 39://→
+              //console.log('你右键了');
+              //扭头
+              img.className = '';
+              var v = parseInt(myGetStyle(img,'left'));
+              img.style.left = v + 10 + 'px';
+            break;
+          case 40: //↓
+            //console.log('你下键了');
+            var v = parseInt(myGetStyle(img,'top'));
+            img.style.top = v + 10 + 'px';
+            break;
+          case 37://←
+            //console.log('你左键了');
+            img.className = 'active';
+            var v = parseInt(myGetStyle(img,'left'));
+            img.style.left = v - 10 + 'px';
+            break;
+        }
+
+      };
+
+    </script>
+</body>
+</html>

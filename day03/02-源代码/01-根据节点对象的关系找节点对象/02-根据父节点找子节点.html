@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <ul id="father">
+    <li>我是li1</li>
+    <li>我是li2</li>
+    <li>我是li3</li>
+    <li>我是li4</li>
+    <li>我是li5</li>
+  </ul>
+  <script>
+    //根据父亲找孩子
+    var father = document.getElementById('father');//父节点
+    //① 父节点.childNodes   返回所有的孩子（文本 + 标签）
+    var haiZis = father.childNodes;
+    console.log(haiZis);
+    //② 父节点.children;  返回所有的孩子（只是标签）
+    var haiZis2 = father.children;
+    console.log(haiZis2);
+  </script>
+</body>
+</html>

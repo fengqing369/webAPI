@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<button id="btn">按钮</button>
+
+<script>
+
+  var btn = document.getElementById('btn');
+  //标准方式
+
+
+  var handler1 = function () {
+    alert(1);
+  };
+  btn.addEventListener('click', handler1);
+  var handler2 = function () {
+    alert(2);
+  };
+  btn.addEventListener('click', handler2);
+
+
+  //标准方式解绑
+  /*
+   事件目标.removeEventListener(事件类型,事件处理程序的名称);
+   事件目标: 要解绑事件的那个节点对象
+   事件类型：解绑什么类型的实际，不加on
+   事件处理程序的名称：函数的名称；
+  */
+  btn.removeEventListener('click',handler1);
+
+</script>
+</body>
+</html>

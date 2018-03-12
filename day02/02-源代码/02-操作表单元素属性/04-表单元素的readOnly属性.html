@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<input type="text" readonly="readonly" value="12345" id="txt"/>
+<script>
+  var txt = document.getElementById('txt');
+  console.dir(txt);
+  console.log(txt.readOnly);
+  txt.readOnly = false;
+  console.log(txt.readOnly);
+</script>
+</body>
+</html>

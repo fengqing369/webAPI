@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <button id="btn">追加</button>
+  <ul id="ul">
+    <li>我是li1</li>
+    <li id="li2">我是li2</li>
+    <li>我是li3</li>
+    <li>我是li4</li>
+    <li id="li5">我是li5</li>
+  </ul>
+  <script>
+    //① 获取要操作的节点对象 按钮 和 ul
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+    //② 给按钮绑定点击事件
+    btn.onclick = function(){
+      var newLi = document.createElement('li');
+      newLi.innerText = '我是新来的';
+      //追加
+      //ul.appendChild(newLi);
+      //父节点对象.insertBefore(新的子节点对象,旧的子节点对象);
+      var old = document.getElementById('li5');
+      ul.insertBefore(newLi,old);
+    };
+  </script>
+</body>
+</html>

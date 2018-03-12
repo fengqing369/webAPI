@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    //练习题2：对一组学生信息排序，按照学生的年龄排序（从小到大）
+    var students = [
+      {name: '张三', age: 10,score:88},
+      {name: '李四', age: 12,score:18},
+      {name: '赵六', age: 9,score:98},
+      {name: '陈七', age: 6,score:108}
+    ];
+
+    //console.log(students[0].age);
+    /*
+    var obj = students[0];
+    console.log(obj.age);
+    */
+
+    students.sort(function(a,b){//a和b代表两个相邻的对象
+      //return a.age- b.age;
+      //return b.age- a.age;
+      return b.score- a.score;
+    });
+
+    console.log(students);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

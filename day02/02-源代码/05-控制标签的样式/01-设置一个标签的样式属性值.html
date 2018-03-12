@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+    }
+
+    .active {
+      background-color: green;
+      width: 600px;
+      border:10px solid red;
+      height: 900px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box" class="active"></div>
+  <script>
+    var box = document.getElementById('box'); //节点对象
+    console.dir(box);
+    /*
+      设置样式：
+        对应样式的属性名是用-隔开的，要变换另外一中方式
+        background-color
+        把-去掉，后面单词首字母大写
+    */
+
+    //通过style控制行内样式   样式少时选择哟昂style
+    /*
+    box.style.width = '600px';
+    box.style.backgroundColor = 'gold';
+    box.style.border = '10px solid red';
+
+    */
+
+
+    /* 通过类名控制一组样式 样式多时，选择用类名控制 */
+    box.className = 'active';
+  </script>
+</body>
+</html>

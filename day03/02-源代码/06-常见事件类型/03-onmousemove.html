@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    div  {
+      width: 300px;
+      height: 300px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+  var box = document.getElementById('box'); //事件源
+  box.onmousemove = function(){
+    //① 随机的范围 [0-255]
+    var r =parseInt(Math.random()*256); //红
+    var g =parseInt(Math.random()*256); //绿
+    var b =parseInt(Math.random()*256); //蓝
+    //② 拼接颜色值
+    var str = 'rgb(' + r + ',' + g + ',' + b + ')';
+    //改变box的背景色
+    this.style.backgroundColor = str;
+
+  };
+</script>
+</body>
+</html>

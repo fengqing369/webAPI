@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+ <input id="txt" type="text" value="12eqwre3wrwer"/>
+ <script>
+   var txt = document.getElementById('txt');
+   txt.onfocus = function(){
+     this.style.backgroundColor = '#000';
+     this.style.color = '#fff';
+   };
+
+   txt.onblur = function(){
+     this.style.backgroundColor = '#fff';
+     this.style.color = '#000';
+   };
+ </script>
+</body>
+</html>

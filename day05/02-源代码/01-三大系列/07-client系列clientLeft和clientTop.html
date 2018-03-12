@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+    div {
+      width: 300px;
+      height: 200px;
+      padding:10px;
+      background-color: red;
+      border:5px solid blue;
+      margin: 100px;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+  var box = document.getElementById('box');
+  //节点对象.clientLeft/Top
+  //获取的坐标：是参照自己的border的外边界
+  console.log(box.clientLeft);
+  console.log(box.clientTop);
+
+</script>
+</body>
+</html>

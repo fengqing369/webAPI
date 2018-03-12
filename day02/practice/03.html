@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<p>
+  <button id="big">放大</button>
+  <button id="small">缩小</button>
+</p>
+<img src="wc.gif" alt="" id="image"/>
+<!-- <script src="common.js"></script> -->
+<!-- <script>
+  var big = document.getElementById("big");
+  var small = document.getElementById("small");
+  var img = document.getElementById("image");
+
+  //放大
+  big.onclick = function(){
+    var mon = parseInt(myGetStyle(img,"width"));
+    mon += 50;
+    image.style.width = mon + "px";
+  }
+
+  //缩小
+  small.onclick = function(){
+    var mon = parseInt(myGetStyle(img,"width"));
+    mon -= 50;
+    if(mon < 200){
+      mon = 200;
+    }
+    image.style.width = mon + "px";
+  }
+
+</script>
+
+<script>
+  function myGetStyle(lei,shu){
+    var imgObj;
+    if(img.currentStyle == undefined){
+      imgObj = getComputedStyle(img,null);
+    }else{
+      imgObj = img.currentStyle;
+    }
+    return imgObj["width"];
+  }
+</script> -->
+
+<!-- <script>
+  var big = document.getElementById('big');
+  var small = document.getElementById('small');
+  var img = document.getElementById('image');
+
+  //放大效果
+  big.onclick = function(){
+    var num = parseInt(getDemo(img,"width"));
+    num += 50;
+    image.style.width = num + "px";
+  }
+
+  //缩小效果
+  small.onclick = function(){
+    var num = parseInt(getDemo(img,"width"));
+    num -= 50;
+    if(num<200){
+      num = 200;
+    }
+    image.style.width = num + "px";
+  }
+
+//获取元素的封装
+  function getDemo(img,shu){
+    var imgObj;
+    if(img.currentStyle == undefined){
+        imgObj = getComputedStyle(img,null);
+    }else{
+      imgObj = img.currentStyle;
+    }
+    return imgObj[shu];
+  }
+</script> -->
+
+<script>
+  var big = document.getElementById("big");
+  var small = document.getElementById("small");
+  var imgs = document.getElementById("image");
+
+  big.onclick = function(){
+    var num = parseInt(getObj(imgs,"width"));
+    num += 50;
+    imgs.style.width = num + "px";
+  }
+
+  small.onclick = function(){
+    var num = parseInt(getObj(imgs,"width"));
+    num -= 50;
+    if( num<200 ){
+      num = 200;
+    }
+    imgs.style.width = num + "px";
+  }
+
+  function getObj(imgs,shuxing){
+    var imgObj;
+    if(imgs.currentStyle == undefined){
+      imgObj = getComputedStyle(imgs,null);
+    }else{
+      imgObj = imgs.currentStyle;
+    }
+    return imgObj[shuxing];
+  }
+
+</script>
+</body>
+</html>

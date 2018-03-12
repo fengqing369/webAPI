@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+
+    }
+    li {
+      background-color: red;
+      margin:10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">按钮</button>
+  <ul id="ul">
+    <li>我是li1</li>
+    <li>我是li2</li>
+    <li>我是li3</li>
+  </ul>
+  <script>
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+    var lis  = ul.getElementsByTagName('li');
+
+    for(var i = 0;i<lis.length;i++){
+      lis[i].onclick = function(){
+        alert(this.innerText);
+      }
+    }
+    btn.onclick = function(){
+      var newLi = document.createElement('li');
+      newLi.innerText  = "我是新来的";
+      newLi.onclick = function(){
+        alert(this.innerText);
+      }
+      ul.appendChild(newLi);
+    }
+  </script>
+  
+</body>
+</html>

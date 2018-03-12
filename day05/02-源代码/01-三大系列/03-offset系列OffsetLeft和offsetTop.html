@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+    div {
+      width: 300px;
+      height: 200px;
+      padding:10px;
+      background-color: red;
+      border:5px solid blue;
+      margin: 100px;
+      margin-top: 700px;
+    }
+    body {
+      height: 5000px;
+    }
+  </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+  var box = document.getElementById('box');
+  //节点对象.offsetLeft / offsetTop
+  //元素没有定位时，元素的坐标参照body
+  console.log(box.offsetTop);
+  console.log(box.offsetLeft);
+
+</script>
+</body>
+</html>

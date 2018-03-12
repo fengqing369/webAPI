@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  document.onclick = function(e){
+    //兼容
+    var _event = window.event||e;
+    //事件对象.type
+    console.log(_event.type);
+  };
+  document.oncontextmenu = function(e){
+    //兼容
+    var _event = window.event||e;
+    //事件对象.type
+    console.log(_event.type);
+  };
+</script>
+</body>
+</html>

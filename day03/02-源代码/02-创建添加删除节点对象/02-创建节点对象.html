@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+
+    }
+    li {
+      background-color: red;
+      margin:10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">添加</button>
+  <ul id="ul">
+    <li>我是li1</li>
+  </ul>
+  <script>
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+    btn.onclick = function(){
+      //console.log(ul.innerHTML);
+      /*
+      ul.innerHTML = '<li>我是新来的</li>';
+      //缺点：覆盖一个容器中所有的内容
+      //解决：获取原有的内容，和新的内容拼接
+      */
+
+      var current = ul.innerHTML;  //原有
+      ul.innerHTML = current + '<li>我是新来的</li>';
+    };
+  </script>
+</body>
+</html>

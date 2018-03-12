@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+
+    }
+    li {
+      background-color: red;
+      margin:10px;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">添加</button>
+<ul id="ul">
+  <li>我是li1</li>
+  <li>我是li2</li>
+</ul>
+<script>
+  var btn = document.getElementById('btn');//按钮节点对象
+  var ul = document.getElementById('ul');//ul节点对象
+  var lis = ul.children; //所有的li节点对象
+  //循环遍历，给原有的li绑定点击事件
+  for(var i = 0;i<lis.length;i++){
+    lis[i].onclick = function(){
+      alert(this.innerText);
+    };
+  }
+
+  //点击按钮产生新的节点对象，并追加到ul中
+  btn.onclick = function(){
+    //自己创建的节点对象
+    var newli = document.createElement('li');
+    //给新的对象添加内容
+    newli.innerText = '我是新来的';
+    //给新的对象添加点击事件
+    newli.onclick = function(){
+      alert(this.innerText);
+    };
+    //console.dir(newli);
+
+    //把新创建的节点对象 追加到ul中    父节点.appendChild(节点对象);
+    ul.appendChild(newli);
+  };
+</script>
+</body>
+</html>

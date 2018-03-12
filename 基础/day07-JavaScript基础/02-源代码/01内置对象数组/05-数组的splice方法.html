@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    var userNames =  ["田冬雪", '李世民',"李少泊", "马月", "周媛媛", "王哲涵", "张三", "易建涛"];
+    //数组名.splice(startIndex,count,数据,数据,数据...);
+    //startIndex 从哪个位置开始删  必须
+    //count 删除几个   必须
+    //数据,数据,数据添加的数据
+
+    //删除数据
+    /*
+    console.log(userNames);
+    userNames.splice(1,2);
+    console.log(userNames);
+    */
+
+
+    //修改
+    console.log(userNames);
+    //userNames.splice(1,1,'LIShiMin');
+    userNames[1] = 'LIShiMin';
+    console.log(userNames);
+
+
+    //添加
+    console.log(userNames);
+    userNames.splice(2,0,'Bruce.Lee');
+    console.log(userNames);
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

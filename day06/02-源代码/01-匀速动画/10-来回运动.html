@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: absolute;
+    }
+    #box2 {
+      margin-top: 200px;
+    }
+  </style>
+</head>
+<body>
+<button id="btn1">运动400</button>
+<button id="btn2">运动1000</button>
+<div id="box1"></div>
+<div id="box2"></div>
+<script src="animate2.js"></script>
+<script>
+  //获取操作的节点对象
+  var btn1 = document.getElementById('btn1'); //400
+  var btn2 = document.getElementById('btn2'); //1000
+  var box1 = document.getElementById('box1');
+  var box2 = document.getElementById('box2');
+
+  //绑定事件
+  btn1.onclick = function(){
+    animate(box1,400);
+    animate(box2,400);
+  };
+
+  btn2.onclick = function(){
+    animate(box1,1000);
+    animate(box2,1000);
+  };
+
+  //问题：当把物体从1000 回到 400时，此时应该每次减5，但是我们的动画函数中   永远加5
+  //原因：不论目标值 大于还是小于 原有值，步长永远是+5
+  //解决方案：
+    //① 物体原有的值 a  1000    ② 目标值b 400
+    //如果a<b     a要不断的加5
+    //如果a>b     a要不断的减5
+</script>
+</body>
+</html>

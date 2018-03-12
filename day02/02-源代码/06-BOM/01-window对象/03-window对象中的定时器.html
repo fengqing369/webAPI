@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<button id="btn">停止</button>
+<script>
+  /*
+   ① setInterval(callback,time);返回一个定时器标识
+   callback，回调函数 函数
+   time 时间  数字 毫秒单位
+   作用；每间隔time时间后，callback里的代码会自动执行。重复
+
+   ② 停止setInterval产生的定时器
+   clearInterval(定时器的标识);
+
+
+  */
+  var count = 0;
+  var num  = setInterval(function(){
+    console.log(count);
+    count++;
+  },1000);
+
+  console.log(num);
+
+  var btn = document.getElementById('btn');
+  btn.onclick = function(){
+    clearInterval(num);
+  }
+
+</script>
+
+</body>
+</html>

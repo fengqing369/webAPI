@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: gold;
+      position: absolute;
+    }
+    #box2 {
+      top:200px;
+      background-color: red;
+    }
+    #box3 {
+      top:400px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+<script src="animate2.js"></script>
+<script>
+  //得到操作的元素
+  var btn = document.getElementById('btn');
+  var box1 = document.getElementById('box1');
+  var box2 = document.getElementById('box2');
+  var box3 = document.getElementById('box3');
+  //给按钮绑定事件
+  btn.onclick = function(){
+   animate(box1,400);  //box1.flag
+   animate(box2,800);  //box2.flag
+   animate(box3,1200); //box3.flag
+  };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">复制</button>
+  <div>
+    <h2>我是标题</h2>
+    <p>我是p标签</p>
+    <ul>
+      <li>我是li</li>
+      <li>我是li</li>
+    </ul>
+  </div>
+  <script>
+    //节点对象.cloneNode(boolean);
+    var div = document.getElementsByTagName('div')[0];
+    var btn = document.getElementById('btn');
+    //克隆
+    btn.onclick = function(){
+      var copyDiv = div.cloneNode(true);
+      //document.body
+      document.body.appendChild(copyDiv);
+    };
+
+  </script>
+</body>
+</html>

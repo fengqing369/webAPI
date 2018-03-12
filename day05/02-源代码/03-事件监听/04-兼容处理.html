@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script src="common.js"></script>
+<script>
+  var btn = document.getElementById('btn');
+  function handler1(){
+    alert(1);
+  }
+  function handler2(){
+    alert(2);
+  }
+  myAddEvent(btn,'click',handler1);
+  myAddEvent(btn,'click',handler2);
+</script>
+</body>
+</html>

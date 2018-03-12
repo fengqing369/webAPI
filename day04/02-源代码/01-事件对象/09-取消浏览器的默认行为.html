@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  document.oncontextmenu = function(e){
+    alert('你的右键菜单事件触发了');
+    //不想看到浏览器默认的菜单
+    var _event = window.event||e;
+    //取消默认行为
+    //标准：事件对象.preventDefault();
+    //IE: 事件对象.returnValue = false
+    // _event.preventDefault();
+    // _event.returnValue=false;
+    // console.log(_event.returnValue )
+
+    //console.log(_event.preventDefault);
+    
+    // if(_event.preventDefault==undefined){
+    //   //在IE中
+    //   _event.returnValue=false
+    // }else{
+    //   //目前在火狐中
+    //   _event.preventDefault();
+    // }
+  
+
+    //取消事件的默认行为 return false
+    return false;
+  };
+</script>
+</body>
+</html>

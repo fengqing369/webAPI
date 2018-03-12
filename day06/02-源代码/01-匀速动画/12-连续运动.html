@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: absolute;
+    }
+    #box2 {
+      margin-top: 200px;
+    }
+    #box3 {
+      margin-top: 400px;
+    }
+  </style>
+</head>
+<body>
+<button id="btn1">运动</button>
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+<script src="animate4.0.js"></script>
+<script>
+  //获取操作的节点对象
+  var btn1 = document.getElementById('btn1'); //400
+  var box1 = document.getElementById('box1');
+  var box2 = document.getElementById('box2');
+  var box3 = document.getElementById('box3');
+
+  //绑定事件
+  btn1.onclick = function(){
+    animate(box1,400,function(){
+      alert('完事儿');
+      animate(box2,400,function(){
+        alert('又完事儿');
+        animate(box3,400);
+      });
+    });
+
+  };
+
+
+
+  //问题：点击按钮时，两个盒子同步走
+  //原因：第一个盒子和第二盒子的定时器，没有关联。或者此时我们没有办法检测到第一个盒子什么时候运动完
+  //解决方案：检测第一个盒子什么时候运动完
+
+
+
+
+</script>
+</body>
+</html>

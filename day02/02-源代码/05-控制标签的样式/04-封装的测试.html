@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    img {
+      width: 400px;
+      height: 500px;
+      border:1px solid red;
+    }
+  </style>
+</head>
+<body>
+<img id="image"  src="01.bmp" alt=""/>
+<script src="common.js"></script>
+<script>
+  var image = document.getElementById('image');
+  /*
+   节点对象.currentStyle 返回可以获取样式属性值的style对象
+   */
+  /*
+  var styleObj; //可以获取样式属性值的对象
+  if(image.currentStyle==undefined){ //在非IE浏览器下使用
+    styleObj = getComputedStyle(image,null);
+  }else { //在IE浏览器中使用
+    styleObj = image.currentStyle;
+  }
+  console.log(styleObj.width);
+  */
+  var v = myGetStyle(image,'width');
+  console.log(v);
+
+</script>
+</body>
+</html>

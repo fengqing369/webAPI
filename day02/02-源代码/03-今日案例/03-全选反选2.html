@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+
+</head>
+<body>
+  <div class="wrap">
+      <table>
+          <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="j_cbAll" />
+                </th>
+                <th>商品</th>
+                <th>价钱</th>
+            </tr>
+          </thead>
+          <tbody id="j_tb">
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>iPhone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>iPad Pro</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>iPad Air</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>Apple Watch</td>
+                <td>2000</td>
+            </tr>
+
+          </tbody>
+      </table>
+      <input type="button" value="  反 选  " id="btn">
+  </div>
+  <script>
+      //① 获取要操作的节点对象 第一个thead中全选的多选框 、  tbody中的一组多选框、全选的按钮
+      var j_cbAll = document.getElementById('j_cbAll');//全选总控制
+      var j_tb = document.getElementById('j_tb'); //tbody节点对象
+      var cks = j_tb.getElementsByTagName('input');
+      //② 实现全选，给thead中全选的多选框绑定点击事件。
+      j_cbAll.onclick = function(){
+          //③ 在事件中检测thead中全选的多选框当前是否被选中。若被选中，tbody中的一组多选框的checke都设置为true.否则都设置为false
+          var flag = this.checked; //全选的状态
+          for(var i = 0;i<cks.length;i++){
+              cks[i].checked = flag;
+          }
+      };
+
+
+      //④ 实现反选。先获取反选按钮。
+      var btn = document.getElementById('btn'); //反选按钮
+      //⑤ 给反选按钮绑定事件
+      btn.onclick = function(){
+        //⑥ 在反选的事件中，循环遍历每一个tbody下input，检测它们的checked的状态，然后取反赋值
+          for(var i = 0;i<cks.length;i++){
+              var current = cks[i].checked; //获取每一个多选框的状态
+              cks[i].checked = !current;
+          }
+      };
+
+  </script>
+</body>
+</html>

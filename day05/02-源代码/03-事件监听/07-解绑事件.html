@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script src="common.js"></script>
+<script>
+
+  var btn = document.getElementById('btn');
+  //绑定
+  var handler1 = function(){
+    alert(1);
+  };
+  var handler2 = function(){
+    alert(2);
+  };
+
+  myAddEvent(btn,'click',handler1);
+  myAddEvent(btn,'click',handler2);
+
+  myRemoveEvent(btn,'click',handler1);
+
+
+</script>
+</body>
+</html>

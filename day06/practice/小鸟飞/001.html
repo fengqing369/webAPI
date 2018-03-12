@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      * {
+        margin: 0;
+        padding:0;
+      }
+      #box {
+        width: 160px;
+        height: 100px;
+        position: absolute;
+      }
+  </style>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="box">
+        <img id="images" src="img/0.bmp" alt="">
+    </div>
+  <script>
+    var images = document.getElementById('images');
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    var count = 0;
+
+      var timer = setInterval(function(){
+          count++;
+          if(count>7){
+            count = 0;
+          }
+          images.src = "img/" + count + ".bmp";
+      },100);
+      
+
+      btn.onclick = function(){
+        var num = setInterval(function(){
+          var target = 1000;
+          var step = 5;
+          var current = box.offsetLeft;
+          if(current == target){
+            clearInterval(num);
+            return;
+          }
+          box.style.left = current + step + "px";
+        },20);
+      }
+    
+
+      
+
+  </script>
+  
+</body>
+</html>

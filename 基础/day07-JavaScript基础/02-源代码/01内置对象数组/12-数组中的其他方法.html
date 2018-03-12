@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    /*
+    var arr = [11,22,33,44];
+    console.log(arr.toString()); //返回字符串
+    console.log(arr.valueOf()); // 返回的是原始值
+    */
+
+
+    /*
+    var arr1 = [11,22,33];
+    var arr2 = [44,55,66];
+    var arr3 = arr1.concat(arr2);
+    console.log(arr3);
+    */
+
+
+    /*
+    var arr = [11,22,33,44,55,66,77,88];
+    var newArr = arr.slice(2,5);
+    console.log(newArr);
+    */
+
+    /*
+      扩展的方法：
+     练习题4：工资的数组[1500, 1200, 2000, 2100, 1800],把薪资小于2000的薪资抽取出来。
+    */
+    var arr = [1500, 1200, 2000, 2100, 1800];
+    //要传给filter使用的函数,
+    var isOk = function(a){  //第一个参数就代表了数组中某一个元素
+      //return a<2000;
+      return a>2000;
+    };
+    var newArr = arr.filter(isOk);
+    console.log(newArr);
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

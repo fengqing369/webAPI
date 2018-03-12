@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    console.log(location);
+  </script>
+</head>
+<body>
+  <button id="btn">获取地址新</button>
+  <button id="btn2">跳转到百度</button>
+  <script>
+    var btn = document.getElementById('btn');
+    var btn2 = document.getElementById('btn2');
+    btn.onclick = function(){
+      console.log(location.hash);// 设置或返回从井号 (#) 开始的 URL（锚）。
+      console.log(location.host);// 设置或返回主机名和当前 URL 的端口号。
+      console.log(location.hostname);// 设置或返回当前 URL 的主机名。
+      console.log(location.href);// 设置或返回完整的 URL。
+      console.log(location.pathname);// 设置或返回当前 URL 的路径部分。
+      console.log(location.port);// 设置或返回当前 URL 的端口号。
+      console.log(location.protocol);// 设置或返回当前 URL 的协议。
+      console.log(location.search);//设置或返回从问号 (?) 开始的 URL（查询部分）。
+    }
+
+    btn2.onclick = function(){
+      location.href = 'https://www.baidu.com';
+      //location.assign('https://www.baidu.com');
+      //location.replace('https://www.baidu.com');
+      //location.reload();
+    }
+
+  </script>
+</body>
+</html>

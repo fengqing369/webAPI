@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <!--
+    标签中用户自定义的属性：如bigSrc
+    对于自定义属性，对应的节点对象无法直接调用
+    如果要获取或其他操作时：
+      获取 ：节点对象.getAttribute('属性名');
+      删除：节点对象.removeAttribute('属性名');
+      添加和修改：节点对象.setAttribute('属性名','值');
+  -->
+  <img src="01.bmp" userName="张三" bigSrc="01.bmp" alt="你好" phone="10086" id="image"/>
+  <script>
+    var img = document.getElementById('image');
+    console.dir(img);
+    console.log(img.src);
+    console.log(img.bigSrc); //undefined
+    var v1 = img.getAttribute('bigSrc');
+    var v2 = img.getAttribute('alt');
+    console.log(v1);//01.bmp
+    console.log(v2);//你好
+    img.removeAttribute('bigSrc');
+    img.removeAttribute('userName');
+    img.setAttribute('age','22');//添加
+    img.setAttribute('phone','10010');//添加
+  </script>
+
+</body>
+</html>

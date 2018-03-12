@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    input {
+      width: 50px;
+    }
+    /*当button标签有类名jy时，鼠标光标显示禁用*/
+    button.jy {
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <!-- 减按钮-->
+  <button id="reduce" class="jy" disabled="disabled">-</button>
+  <!-- 显示数量的文本框-->
+  <input id="txt" type="text" value="1" readonly="readonly"/>
+  <!-- 加按钮-->
+  <button id="add">+</button>
+  <script>
+    //① 获取要操作的节点对象 两个按钮 和 一个文本框
+    var reduce = document.getElementById('reduce');
+    var txt = document.getElementById('txt');
+    var add = document.getElementById('add');
+    //② 实现加的功能，给第二按钮绑定点击事件
+    add.onclick = function(){
+      //先获取文本框中原有的数量
+      var count = Number(txt.value);
+      count = count + 1; //改变
+      txt.value = count;
+      //判断是否要解用减的按钮
+      if(count>1){ //解用
+        reduce.disabled = false;
+        reduce.className = '';
+      }else{ //禁用
+        reduce.disabled = true;
+        reduce.className = 'jy';
+      }
+    };
+    //③  实现减的功能，给第一按钮绑定点击事件
+    reduce.onclick = function(){
+      var count = Number(txt.value);
+      count = count-1; //改变
+      txt.value = count;
+      //判断是否要解用减的按钮
+      if(count>1){ //解用
+        reduce.disabled = false;
+        reduce.className = '';
+      }else{ //禁用
+        reduce.disabled = true;
+        reduce.className = 'jy';
+      }
+
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin:0;
+      padding:0;
+    }
+    div {
+      width: 210px;
+      margin:100px auto;
+    }
+    span {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      font:bold 20px/50px '幼圆';
+      text-align: center;
+      background-color: darkred;
+      color: #fff;
+    }
+
+    .spe {
+      width: 20px;
+      font:bold 20px/50px '幼圆';
+      text-align: center;
+      background-color: #fff;
+      color:#000;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <span id="h">00</span>
+    <span class="spe">:</span>
+    <span id="m">00</span>
+    <span class="spe">:</span>
+    <span id="s">00</span>
+  </div>
+  <!--引入 -->
+  <script src="common.js"></script>
+  <!-- 自己的js-->
+  <script>
+    //① 获取要操作的节点对象
+    var h = document.getElementById('h');
+    var m = document.getElementById('m');
+    var s = document.getElementById('s');
+    //② 得到两个时间差
+    var start = new Date();
+    var end = new Date('2017-12-21 12:00:00');
+    var timeObj = getTimeDiff(start,end);
+    h.innerHTML = timeObj.hours;
+    // console.log(h.innerHTML);
+    m.innerHTML = timeObj.minutes;
+    // console.log(m.innerHTML);
+    s.innerHTML = timeObj.seconds;
+    // console.log(s.innerHTML);
+
+    //③ 产生一个定时器
+    setInterval(function(){
+      var start = new Date();
+      var end = new Date('2017-12-21 12:00:00');
+      var timeObj = getTimeDiff(start,end);
+      h.innerHTML = timeObj.hours;
+      m.innerHTML = timeObj.minutes;
+      s.innerHTML = timeObj.seconds;
+    },1000);
+  </script>
+
+</body>
+</html>

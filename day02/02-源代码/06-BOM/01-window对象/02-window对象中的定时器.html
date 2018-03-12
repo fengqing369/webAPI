@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <button id="btn">拆弹</button>
+<script>
+  /*
+    ① setTimeout(callback,time);返回一个定时器标识
+      callback，回调函数 函数
+      time 时间  数字 毫秒单位
+      作用；当time时间后，callback里的代码会自动执行。执行一次
+
+    ② 停止setTimeout产生的定时器
+      clearTimeout(定时器的标识);
+
+    ③ 执行一次
+
+  */
+  var num = window.setTimeout(function(){
+    //定时器要做的事情
+    alert('爆了!!!');
+  },3000);
+
+  /*
+  var num2 = window.setTimeout(function(){
+    //定时器要做的事情
+    alert('爆了!!!');
+  },3000);
+  */
+  console.log(num);
+  //console.log(num2);
+
+  //获取按钮
+  var btn = document.getElementById('btn');
+  btn.onclick = function(){
+    //停止
+    window.clearTimeout(num);
+  };
+</script>
+</body>
+</html>

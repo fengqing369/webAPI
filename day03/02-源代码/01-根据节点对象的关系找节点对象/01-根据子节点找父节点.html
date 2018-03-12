@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <div class="grandFather">
+    <div class="father">
+      <p id="son">儿子</p>
+    </div>
+  </div>
+  <script>
+    var son = document.getElementById('son');//子节点对象
+    //找父节点    子节点.parentNode
+    var father = son.parentNode;
+    console.dir(father);
+    //找父节点的父节点 （爷爷）
+    var grandFather = son.parentNode.parentNode;
+    console.dir(grandFather);
+    //找父节点的父节点的父节点
+    var t = son.parentNode.parentNode.parentNode;
+    console.log(t);
+  </script>
+</body>
+</html>

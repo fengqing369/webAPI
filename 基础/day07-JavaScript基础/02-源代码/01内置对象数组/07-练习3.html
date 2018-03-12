@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    //练习题3：给一组不重复的名单，实现删除数组中姓名的功能。 删除方式是：提示用户是否要删除一个人？若用户选择是，则再提示用户请输入要删除的 姓名，根据用户输入的姓名删除数组中对应的名字。
+    //思路：需求 + 技术
+    //① 给一组不重复的名单
+    var userNames = ["田冬雪", "李少泊", "马月", "周媛媛", "王哲涵", "韩丹璐"];
+    //② 提示用户是否要删除一个人 confirm('提示信息') 返回一个布尔值
+    var flag = confirm('你真的忍心删除一个人吗？');
+    //③ 根据用户的选择判断是否删
+    if(flag){  //删
+      //④ 接收用户输入的名字
+      var n = prompt('请输入一个学生的名字');
+      //⑤ 找到要删的那个人的位置
+      var index = userNames.indexOf(n);
+      //⑥ 根据index是否是-1，判断这个人是否存在。
+      if(index!=-1){//存在
+        //删
+        userNames.splice(index,1);
+        alert('删除成功');
+        console.log(userNames); //查看删除后的结果
+
+      }else { //不存在
+        alert('你要删的这个人不存在');
+      }
+    }else {   //不删
+      console.log(userNames);
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

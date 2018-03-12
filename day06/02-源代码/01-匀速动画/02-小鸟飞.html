@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<img id="photo" src="img/0.bmp" alt=""/>
+<script>
+  //① 得到图片节点
+  var photo = document.getElementById('photo');
+  //② 每间隔1秒，切换图片的路径
+  var count = 0;//表示当前显示哪一张图片
+  setInterval(function(){
+    count++;
+    if(count>7){
+      count = 0;
+    }
+    //执行切换图片的路径
+    photo.src = 'img/' + count + '.bmp';
+  },100);
+</script>
+</body>
+</html>

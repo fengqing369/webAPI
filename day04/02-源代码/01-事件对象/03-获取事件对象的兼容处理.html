@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<script>
+  document.onmousemove = function(e){
+    //标准的方式:事件处理程序的第一个形参  e
+    //IE低版本方式：window.event;
+    var _event; //这个变量表示最终使用哪个方式
+    if(window.event==undefined){
+      //目前在非IE浏览器中
+      _event = e;  //用标准方式
+    }else {
+      //目前在IE浏览器中
+      _event = window.event; //用IE低版本方式
+    }
+
+    console.log('X:' + _event.clientX + '---Y:' + _event.clientY);
+
+  };
+</script>
+</body>
+</html>

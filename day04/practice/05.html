@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li {
+      background-color: aqua;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">按钮</button>
+  <div>
+    <ul id="ul">
+      <li>我是li1</li>
+      <li>我是li2</li>
+      <li>我是li3</li>
+      <li>我是li4</li>
+      <li>我是li5</li>
+      <li>我是li6</li>
+      <li>我是li7</li>
+      <li>我是li8</li>
+      <li>我是li9</li>
+      <li>我是li10</li>
+    </ul>
+  </div>
+  <script>
+    //获取元素
+    var btn = document.getElementById('btn');
+    var ul = document.getElementById('ul');
+    //设置btn点击事件
+    btn.onclick = function(){
+      //创建li元素
+      var newLi = document.createElement('li');
+      //给li设置添加文本
+      newLi.innerHTML = "我是新来的" + parseInt(Math.random()*100);
+      //把新创建的li方法在ul里面
+      ul.appendChild(newLi);
+    }
+
+    //设置ul的委托事件
+    ul.onclick = function(e){
+      //设置事件对象
+      var e = e || window.event;
+      //设置对象的目标
+      var t = e.target || e.srcElement;
+      // if(t.tagName.toUpperCase() == 'LI'){
+      // if(t.tagName.toLowerCase() == 'li'){
+      if(t.tagName == 'LI'){
+        alert(t.innerHTML);
+      }
+      // if(t.tagName == 'UL'){
+      //   alert(t.innerHTML);
+      // }
+    }
+  </script>
+
+  <!-- <script>
+    var btn = document.getElementById("btn");
+    var ul = document.getElementById("ul");
+    btn.onclick = function(){
+      var li = document.createElement('li');
+      li.innerHTML = '<ul id="ul">' + 
+                        '<li>我是新的li' + parseInt(Math.random()*100) + '</li>' +
+                      '</ul>';
+      ul.appendChild(li);
+    }
+
+    ul.onclick = function(e){
+      var e = e || window.event;
+      var t = e.target || e.srcElement;
+      if(t.tagName == "LI"){
+        alert(t.innerHTML);
+      }
+    }
+  </script> -->
+  
+</body>
+</html>

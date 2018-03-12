@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    li {
+      background-color: red;
+      margin-top: 10px;
+    }
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+<ul id="ul">
+  <li>我是li2</li>
+  <li>、
+    <div>我是li1中div</div>
+  </li>
+</ul>
+<script>
+  var ul = document.getElementById('ul');
+  ul.onclick = function(e){
+    //this代表的是ul
+    //console.log(this.innerHTML);
+
+    var _event = window.event||e; //事件对象
+    //触发哪个元素，target就代表谁
+    console.log(_event.target);
+
+
+  };
+</script>
+</body>
+</html>

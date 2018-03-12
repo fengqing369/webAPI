@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    //知识点：
+    var str = 'abcDEf';
+    //var newStr = str.toUpperCase();
+    var newStr = str.toLowerCase();
+    console.log(newStr);
+
+    //① 接收用户输入的验证码
+    var code = prompt('请输入验证码【AbcG12】');
+    //保证code不是null或undefined
+    if(code==null||code==undefined){
+      alert('请不要取消，请输入正确验证码并且点确定')
+    }else {
+      if(code.toLowerCase()=='abcg12'){
+        alert('验证成功');
+      }else {
+        alert('验证码不对');
+      }
+    }
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    img {
+      width: 400px;
+      height: 500px;
+      border:1px solid red;
+    }
+  </style>
+</head>
+<body>
+<img id="image"  src="01.bmp" alt=""/>
+<script>
+  var image = document.getElementById('image');
+  /*
+    节点对象.currentStyle 返回可以获取样式属性值的style对象
+ */
+  var styleObj = image.currentStyle;
+  console.log(styleObj.width);
+
+  //myStyle(节点,'属性名');
+</script>
+</body>
+</html>

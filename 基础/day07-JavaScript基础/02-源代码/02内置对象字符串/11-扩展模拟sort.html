@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="common.js"></script>
+  <script>
+    /*
+    mySort(数组,function(a,b){
+      return a-b; //从小到大
+      //return b-a; //从大到小
+    });
+
+
+    var arr = [11,22,44,55,77,66];
+    mySort(arr,function(a,b){
+      return a-b;
+    });
+    */
+
+
+/*
+    var arr = [22,11,44,55,77,66];
+    //外层循环控制趟数
+    for(var tang = 1;tang<arr.length;tang++){
+      //内层循环控制每趟比较的次数
+      for(var count = 1;count<=arr.length-tang;count++){
+        //判断交换
+        if(arr[count-1]<arr[count]){
+          var temp = arr[count];
+          arr[count] = arr[count-1];
+          arr[count-1] = temp;
+        }
+      }
+    }
+    console.log(arr);
+*/
+    var arr2 = [22,11,44,55,77,66]; //数组
+
+    mySort2(arr2,function(a,b){  //调用了mySort2
+      //return a-b;
+      return b-a;
+    });
+    console.log(arr2);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

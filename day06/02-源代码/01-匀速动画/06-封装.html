@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding:0;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: gold;
+      position: absolute;
+    }
+
+    #box2 {
+      top:300px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+<button id="btn">按钮1控制金色的盒子</button>
+<button id="btn2">按钮2控制蓝色的盒子</button>
+<div id="box"></div>
+<div id="box2"></div>
+<script>
+  //得到操作的元素
+  var btn = document.getElementById('btn');
+  var btn2 = document.getElementById('btn2');
+  var box = document.getElementById('box');
+  var box2 = document.getElementById('box2');
+  //给按钮绑定事件
+  var num;//定时器的标识
+  btn.onclick = function(){
+    //时间：定时器
+    //状态：更改div的状态（更改left值）
+    //点击按钮会产生一个新的定时器，新的定时器产生之前，把之前的定时器停止了。
+    if(num!=undefined){
+      clearInterval(num); //把之前的定时器停止了。
+    }
+
+    num = setInterval(function(){
+      console.log('执行中...');
+      //步长
+      var step = 5;
+      //设定一个目标值
+      var targetValue = 800;
+      //原有的left值
+      var currentValue = box.offsetLeft;
+      //判断是否到达目标
+      if(currentValue==targetValue){ //到达目标
+        clearInterval(num);//结束定时器,下一时间后定时器不在执行
+        return;//结束函数的执行
+      }
+      box.style.left = currentValue + step + 'px';
+    },30);
+  };
+
+
+  var num2;
+  btn2.onclick = function(){
+    //时间：定时器
+    //状态：更改div的状态（更改left值）
+    //点击按钮会产生一个新的定时器，新的定时器产生之前，把之前的定时器停止了。
+    if(num2!=undefined){
+      clearInterval(num2); //把之前的定时器停止了。
+    }
+
+    num2 = setInterval(function(){
+      console.log('执行中...');
+      //步长
+      var step = 5;
+      //设定一个目标值
+      var targetValue = 1000;
+      //原有的left值
+      var currentValue = box2.offsetLeft;
+      //判断是否到达目标
+      if(currentValue==targetValue){ //到达目标
+        clearInterval(num2);//结束定时器,下一时间后定时器不在执行
+        return;//结束函数的执行
+      }
+      box2.style.left = currentValue + step + 'px';
+    },30);
+  }
+</script>
+</body>
+</html>
