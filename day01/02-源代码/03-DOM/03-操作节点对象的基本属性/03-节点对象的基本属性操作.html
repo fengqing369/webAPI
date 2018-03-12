@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <button id="btn">点击</button>
+  <div id="box">
+      <h1>张三</h1>
+  </div>
+  <script>
+    //① 获取节点对象 按钮 和 div
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    //② 给按钮绑定事件
+    btn.onclick = function(){
+      //更改div中内容
+      console.log(box.innerHTML); //包含文本和标签
+      console.log(box.innerText);//仅仅是文本
+      //box.innerHTML = '<h1>李四</h1>'; //innerHTML在设置时，若有标签，则标签会被解析和渲染
+      box.innerText = '<h1>李四</h1>'; //innerText在设置时，若有标签，则标签会被当做文本对待.
+    };
+  </script>
+</body>
+</html>

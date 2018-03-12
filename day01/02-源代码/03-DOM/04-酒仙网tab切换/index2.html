@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+<!--版心-->
+<div class="container">
+    <!--tab切换模块-->
+    <div class="tab">
+        <!--切换按钮-->
+        <ul class="tab-control">
+            <li class="active">疯狂抢购</li>
+            <li>热卖推荐</li>
+            <li>猜你喜欢</li>
+            <li>新品上架</li>
+            <li>整箱特卖</li>
+        </ul>
+        <!--切换项-->
+        <div class="tab-content">
+            <div class="tab-content-item active">
+                <img src="img/01.bmp"/>
+            </div>
+            <div class="tab-content-item">
+                <img src="img/02.bmp"/>
+            </div>
+            <div class="tab-content-item">
+                <img src="img/03.bmp"/>
+            </div>
+            <div class="tab-content-item">
+                <img src="img/04.bmp"/>
+            </div>
+            <div class="tab-content-item">
+                <img src="img/05.bmp"/>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script src="common.js"></script>
+<script>
+    //思路：
+    //① 获取所要操作的节点对象 一组li 和 一组 div
+    var lis = $TN('li'); //一组li
+    var divs = document.querySelectorAll('.tab-content-item');
+    //② 循环遍历给每一个li绑定事件
+    for(var i = 0,len = lis.length;i<len;i++){
+        lis[i].weizhi = i; //给每一个li节点对象添加一个属性weizhi表示li在集合中的位置。
+        lis[i].onclick = function(){
+          //this 代表触发的那个目标
+          // ③ 按钮切换  对应的div要显示
+            for(var j = 0,len = lis.length;j<len;j++){
+                lis[j].className = '';
+                divs[j].className = 'tab-content-item';
+            }
+            this.className = 'active';
+            var index = this.weizhi;
+            divs[index].className = 'tab-content-item active';
+        };
+    }
+
+    console.log(lis);
+
+</script>
+</body>
+</html>

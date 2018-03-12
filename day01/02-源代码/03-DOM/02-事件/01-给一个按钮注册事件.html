@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+
+</head>
+<body>
+<button id="btn">按钮</button>
+<script>
+  /*
+    事件：和浏览器交互的行为（比如：鼠标点击）
+    事件三要素：
+      事件源（事件目标）：触发的谁？（比如开灯时，触发的开关按钮）
+      事件类型：行为方式（比如：开灯时，按下的行为）
+      事件处理程序:事件触发后的结果（比如：按下开关时，灯亮了）
+    语法：
+      事件目标.onclick = function(){
+        //执行的代码
+      }
+  */
+  //① 获取按钮标签对相应的节点对象
+  var btn = document.getElementById('btn'); //事件目标
+  //② 给按钮节点对象注册一个点击事件
+  btn.onclick = function(){
+    alert('疼，别碰我');
+  };
+</script>
+
+</body>
+</html>

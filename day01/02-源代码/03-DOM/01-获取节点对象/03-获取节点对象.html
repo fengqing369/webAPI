@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <ul>
+    <li>我是第一个ul中li1</li>
+    <li>我是第一个ul中li2</li>
+    <li>我是第一个ul中li3</li>
+    <li>我是第一个ul中li4</li>
+    <li>我是第一个ul中li5</li>
+    <li>我是第一个ul中li6</li>
+    <li>我是第一个ul中li7</li>
+    <li>我是第一个ul中li8</li>
+    <li>我是第一个ul中li9</li>
+    <li>我是第一个ul中li10</li>
+  </ul>
+
+  <ul id="ul2">
+    <li>我是第二个ul中lis1</li>
+    <li>我是第二个ul中lis2</li>
+    <li>我是第二个ul中lis3</li>
+    <li>我是第二个ul中lis4</li>
+    <li>我是第二个ul中lis5</li>
+    <li>我是第二个ul中lis6</li>
+    <li>我是第二个ul中lis7</li>
+    <li>我是第二个ul中lis8</li>
+    <li>我是第二个ul中lis9</li>
+    <li>我是第二个ul中lis10</li>
+  </ul>
+
+  <ul>
+    <li>我是第三个ul中li</li>
+  </ul>
+  <script>
+    //需求：获取第二ul中所有的li
+    //var lis = document.getElementsByTagName('li');
+    var ul2 = document.getElementById('ul2');//第二ul对应的节点对象
+    var lis = ul2.getElementsByTagName('li');
+    console.log(lis);
+  </script>
+</body>
+</html>

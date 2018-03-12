@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      text-align: center;
+    }
+    div {
+      width: 500px;
+      height: 500px;
+      background-color: #000;
+      color:gold;
+      margin: 10px auto;
+      font:bold 100px/500px '幼圆';
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">随机点名</button>
+  <div id="box">张三</div>
+  <!-- 第三方工具库-->
+  <script src="common.js"></script>
+  <!-- 自定义的js-->
+  <script>
+    var arr =  ["田冬雪", "李少泊", "马月", "周媛媛", "王哲涵", "韩丹璐", "易建涛", "李聪慧", "圣长伟", "邓耀辉", "吕梦园", "崔慧芬", "高慧", "来姣姣", "赵翔宇", "侯肖丽", "王丽", "栗大平", "陈佳豪", "霍旭东", "高千山", "俞壮", "赵斯佳", "张友", "鄢华康", "孟迪", "预  祁天秀", "郝博", "崔崇雨", "陈玉凤", "赵磊", "卢毛赛", "预 张世伟", "卢琴", "刘丽娜", "张泽栋", "郭亚槿", "陶坤", "王慧晨", "胡培杰", "沈建文", "杨东奇", "李欢", "付晨舒", "张鹏", "赵田", "李兴阳", "许莉莉", "李庆斌", "经海文", "高瑞敏", "宋星晓", "史晨阳", "张良才", "刘珍", "龙二玲", "曹雯", "赵庆贞", "单彪", "孙丹丹", "王艳", "王硕", "张志强", "杜伟涛", "马宇璐", "陈春絮", "邱进梅", "闫美慧", "赵迪", "刘洋", "徐敏", "杨刚", "李明慧", "李学东", "崔建", "詹可可", "谢雨彤", "吴淑杨", "王雨晴", "高小雪", "王迎春", "郝振吉", "刘彬", "王海龙", "刘妍", "熊伟"];
+
+    //① 获取所要操作的节点对象  按钮 和 div
+    var btn = document.getElementById('btn');
+    var box = document.getElementById('box');
+    //② 给按钮绑定点击事件
+    btn.onclick = function(){
+      //③ 更改div中的内容
+      var index = parseInt(Math.random()*arr.length); //随机得到一个位置
+      //box.innerText = arr[index];
+      setText(box,arr[index]);
+    };
+
+  </script>
+</body>
+</html>

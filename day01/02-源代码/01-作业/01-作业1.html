@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    /*
+     练习题8: 字符串 ‘无敌是多么寂寞，无敌是多么空虚，无敌是多么的冷，无敌是多么的...’，用程序统计无敌在字符串中出现的次数。
+    */
+    //① 给一个字符串
+    var str = '无敌是多么寂寞，无敌是多么空虚，无敌是多么的冷，无敌是多无敌么无敌的...无敌';
+    //② 定义一个变量，表示 无敌 的次数
+    var count = 0;
+    //③ 定义一个循环，在循环中重复的去找 无敌 ，若找不到了，则停止循环。若找到了，则count累加一次
+    while(true){
+      //④ 根据技术 indexOf 查找无敌是否存在，不存在返回-1
+      var index = str.indexOf('无敌');
+      if(index==-1){
+        //结束循环
+        break;
+      }else {
+        //找到一次
+        count = count+1;
+        //方便下一次
+        str = str.substring(index+2);
+      }
+    }
+
+    console.log(count);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

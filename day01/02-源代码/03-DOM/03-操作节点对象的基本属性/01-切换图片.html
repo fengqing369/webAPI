@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <button id="btn">切换图片</button>
+  <br/>
+  <img id="image" src="img/wc.jpg" alt=""/>
+  <script>
+    //① 获取所要操作的节点对象 按钮 和 图片
+    var btn = document.getElementById('btn'); //按钮节点对象
+    var img = document.getElementById('image');//图片节点对象
+
+    //② 给按钮注册一个点击事件
+    var flag = true;  //  表示 true 下次点击要显示猫咪  false 下次点击显示旺财
+    btn.onclick = function(){
+      //③ 切换图片
+      if(flag){ //true
+        //显示猫咪
+        img.src = 'img/mm.gif';
+        flag = false; //下次再点要显示旺财
+      }else{   //false
+        //显示旺财
+        img.src = 'img/wc.jpg';
+        flag = true; //下次点击要显示猫咪
+      }
+    };
+
+  </script>
+</body>
+</html>

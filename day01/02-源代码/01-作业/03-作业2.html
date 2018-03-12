@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    //字符串 ‘https://www.jd.com/index.html?userName=张三&pwd=123456&id=123456’ 把地址?后面的参数提取出来存放到一个对象中   如：{userName:’张三’,pwd:’123456’,id=’123456’}
+    //① 给一个字符串
+    var str = 'https://www.jd.com/index.html?userName=张三&pwd=123456&id=123456';
+    //② 得到问号位置
+    var index = str.indexOf('?');
+    //③ 截取
+    str = str.substring(index+1);  //userName=张三&pwd=123456&id=123456
+    //规律： 键=值&键=值&键=值
+    //④ 根据&分割，将每一个键值对抽取出来
+    var arr = str.split('&');
+    console.log(arr);
+    //⑤ 准备好一个对象
+    var obj = {};
+    /*
+    obj['username']='张三';
+    obj['pwd']='123456';
+    obj['id']='123456';
+    console.log(obj);
+    */
+
+    //⑥ 循环遍历数组，从数组中取出单个字符串 '键=值',
+    for(var i = 0;i<arr.length;i++){
+      //obj[键]=值;
+      var child = arr[i]; //'键=值'         //0    1
+      var childArr = child.split('=');  // ['键','值']
+      var key = childArr[0]; //键
+      var value = childArr[1]; //值
+      obj[key] = value;
+    }
+
+    console.log(obj);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

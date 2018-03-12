@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <script>
+    //根据id值获取标签对应节点对象
+    //get 获取  Element 元素 ById通过id
+    //语法：document.getElementById('id值');
+    var btn = document.getElementById('btn');
+    console.log(btn); //在这里获取到的是null(空)
+    //为什么获取是null?
+    //因为浏览器在加载网页时，是自上而下加载的，此时在此处按钮标签还没有被加载，所以按钮标签对应的节点对象没有生成。所有获取为null
+  </script>
+</head>
+<body>
+  <button id="btn">按钮1</button>
+  <div id="box">div</div>
+  <script>
+    //根据id值获取标签对应节点对象
+    //get 获取  Element 元素 ById通过id
+    //语法：document.getElementById('id值');
+    var btn = document.getElementById('btn');
+    //console.log(btn); //在这里获取到的是null(空)
+    console.dir(btn);//类型：HTMLButtonElement
+    //console.log(typeof(btn));
+
+
+    var box = document.getElementById('box');
+    console.dir(box); //HTMLDivElement
+  </script>
+</body>
+</html>

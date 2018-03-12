@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+
+</head>
+<body>
+  <div id="box" title="我是div">div</div>
+  <a id="link" href="https://www.baidu.com">百度</a>
+  <script>
+    /*
+      非表单属性：
+        id、href、src、title
+      表单属性：
+    */
+    var box = document.getElementById('box');
+    console.dir(box);
+    console.log(box.id);
+    console.log(box.title);
+    box.id = 'box2';
+    box.title = 'my name is div';
+    console.dir(box);
+    console.log(box.id);
+    console.log(box.title);
+
+    var link = document.getElementById('link');
+    console.dir(link);
+    console.log(link.href);
+    link.href = 'https://www.jd.com';
+
+
+  </script>
+</body>
+</html>
